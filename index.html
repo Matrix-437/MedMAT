@@ -5,38 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MedMAT | Medication Adherence Tracker </title>
     <style>
-        /* ================================================================
-   GRADIENT INTERACTIVE BACKGROUND
-   ================================================================ */
-body {
-    background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
+           /* ================================================================
+              GRADIENT INTERACTIVE BACKGROUND
+              ================================================================ */
+        body {
+           background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483);
+           background-size: 400% 400%;
+           animation: gradientShift 15s ease infinite;
+           min-height: 100vh;
+           margin: 0;
+           padding: 20px;
 }
 
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+          @keyframes gradientShift {
+           0% { background-position: 0% 50%; }
+           50% { background-position: 100% 50%; }
+           100% { background-position: 0% 50%; }
 }
 
-/* Frosted glass container */
-.container {
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: background 0.5s ease, box-shadow 0.5s ease;
+       /* Frosted glass container */
+        .container {
+          background: rgba(255, 255, 255, 0.92);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
-[data-theme="dark"] .container {
-    background: rgba(26, 32, 44, 0.92);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+       [data-theme="dark"] .container {
+          background: rgba(26, 32, 44, 0.92);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.05);
 }
         /* ================================================================
            CSS VARIABLES & RESET
@@ -2352,12 +2352,11 @@ body {
         console.log('💊 Med MAT v2.0 loaded with all features!');
         console.log(`📋 ${medications.length} medications, ${doses.length} doses, ${history.length} history entries.`);
         // Mouse-tracking gradient effect
-document.addEventListener('mousemove', function(e) {
-    const x = (e.clientX / window.innerWidth) * 100;
-    const y = (e.clientY / window.innerHeight) * 100;
-    document.body.style.backgroundPosition = `${x}% ${y}%`;
+        document.addEventListener('mousemove', function(e) {
+        const x = (e.clientX / window.innerWidth) * 100;
+        const y = (e.clientY / window.innerHeight) * 100;
+        document.body.style.backgroundPosition = `${x}% ${y}%`;
 });
-    </script>
-
+</script>
 </body>
 </html>
