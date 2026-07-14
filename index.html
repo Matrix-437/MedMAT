@@ -24,19 +24,24 @@
 }
 
        /* Frosted glass container */
-        .container {
-          background: rgba(255, 255, 255, 0.92);
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          transition: background 0.5s ease, box-shadow 0.5s ease;
+       .container {
+    max-width: 1000px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background var(--transition), box-shadow var(--transition);
 }
 
-       [data-theme="dark"] .container {
-          background: rgba(26, 32, 44, 0.92);
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.05);
+[data-theme="dark"] .container {
+    background: rgba(26, 32, 44, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
         /* ================================================================
            CSS VARIABLES & RESET
@@ -2350,11 +2355,24 @@
 
         console.log('💊 Med MAT v2.0 loaded with all features!');
         console.log(`📋 ${medications.length} medications, ${doses.length} doses, ${history.length} history entries.`);
-        // Mouse-tracking gradient effect
-        document.addEventListener('mousemove', function(e) {
-        const x = (e.clientX / window.innerWidth) * 100;
-        const y = (e.clientY / window.innerHeight) * 100;
-        document.body.style.backgroundPosition = `${x}% ${y}%`;
+       // ================================================================
+       // PRONOUNCED MOUSE-TRACKING GRADIENT EFFECT
+       // ================================================================
+document.addEventListener('mousemove', function(e) {
+    const x = (e.clientX / window.innerWidth) * 100;
+    const y = (e.clientY / window.innerHeight) * 100;
+    
+    // Move the gradient faster and with more sensitivity
+    document.body.style.backgroundPosition = `${x * 1.5}% ${y * 1.5}%`;
+    document.body.style.backgroundSize = '800% 800%';
+});
+
+// Also add a subtle parallax effect to the container
+document.addEventListener('mousemove', function(e) {
+    const container = document.querySelector('.container');
+    const xOffset = (e.clientX / window.innerWidth - 0.5) * 8;
+    const yOffset = (e.clientY / window.innerHeight - 0.5) * 8;
+    container.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
 });
 </script>
 </body>
