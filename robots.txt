@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://matrix-437.github.io/MedMAT/sitemap.xml
